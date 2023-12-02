@@ -1,17 +1,41 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Crear un arreglo para almacenar 10 estudiantes
+        Estudiantes[] estudiantes = new Estudiantes[3];
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        // Ingresar datos para 10 estudiantes
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Ingrese datos para el estudiante " + (i + 1));
+
+            System.out.print("Nombre: ");
+            String nombre = scanner.nextLine();
+            scanner.nextLine();
+
+            System.out.print("Materia: ");
+            String materia = scanner.nextLine();
+
+
+            System.out.print("Edad: ");
+            int edad = scanner.nextInt();
+            /*scanner.nextInt();*/
+
+            estudiantes[i] = new Estudiantes(nombre, materia,edad);
+
+            System.out.println();
         }
+
+        // Imprimir los datos de todos los estudiantes
+        System.out.println("Datos de los estudiantes:");
+        for (Estudiantes Estudiantes : estudiantes) {
+            Estudiantes.imprimirDatos();
+        }
+
+
+        // Cerrar el scanner
+        scanner.close();
     }
 }
+
